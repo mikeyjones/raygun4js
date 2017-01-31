@@ -37,6 +37,7 @@ var raygunFactory = function (window, $, undefined) {
         _rum = null,
         _pulseMaxVirtualPageDuration = null,
         _pulseIgnoreUrlCasing = true,
+        _pulseCustomLoadTimeEnabled = null,
         $document;
 
 
@@ -77,6 +78,7 @@ var raygunFactory = function (window, $, undefined) {
                 _excludedUserAgents = options.excludedUserAgents || false;
                 _pulseMaxVirtualPageDuration = options.pulseMaxVirtualPageDuration || null;
                 _pulseIgnoreUrlCasing = options.pulseIgnoreUrlCasing || false;
+                _pulseCustomLoadTimeEnabled = options.pulseCustomLoadTimeEnabled || false;
 
                 if (options.apiUrl) {
                     _raygunApiUrl = options.apiUrl;
@@ -113,7 +115,8 @@ var raygunFactory = function (window, $, undefined) {
                       _excludedUserAgents,
                       _debugMode,
                       _pulseMaxVirtualPageDuration,
-                      _pulseIgnoreUrlCasing
+                      _pulseIgnoreUrlCasing,
+                      _pulseCustomLoadTimeEnabled
                     );
 
                     _rum.attach();
